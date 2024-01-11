@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { addToWishlist } from '../Redux/slices/wishlistSlice'
 import { addToCart } from '../Redux/slices/cartSlice'
+import Header from '../Components/Header'
 
 
 function View() {
@@ -27,6 +28,8 @@ function View() {
   console.log(wishlist);
 
   return (
+    <>
+    <Header/>
     <div>
       <Container className='p-5 m-5'>
         <Row>
@@ -49,6 +52,7 @@ function View() {
         </Row>
       </Container>
     </div>
+    </>
   )
 }
 

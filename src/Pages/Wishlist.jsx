@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromWishlist } from '../Redux/slices/wishlistSlice';
 import { addToCart } from '../Redux/slices/cartSlice';
+import Header from '../Components/Header';
 
 
 
@@ -18,6 +19,9 @@ function Wishlist() {
   const wishlist=useSelector(state=>state.wishlistReducer)
 console.log(wishlist);
   return (
+    <>
+          <Header />
+
     <Container style={{ paddingTop: '10px' }} className='d-flex justify-content-center'>
       {
         <Row className='justify-content-center w-100'>
@@ -45,10 +49,14 @@ console.log(wishlist);
                 </Card>
               </Col>)
             ):
-            <h1>No item in your wishlist</h1>}
+            <div className='p-5 d-flex justify-content-center align-items-center text-primary flex-column'>
+          <h1>No item in your wishlist!</h1>
+          <img src="empty-cardboard-box.png" alt="Empty box clip-art"  width={'300px'}/>
+        </div>}
         </Row>
       }
     </Container>
+    </>
   )
 }
 

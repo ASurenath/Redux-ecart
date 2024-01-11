@@ -1,7 +1,6 @@
 import React from 'react'
-import { Badge, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +11,10 @@ function Footer() {
             <Row className='w-100'>
   
   <Col lg={3} md={6}>
-  <Navbar.Brand className='fw-bold fs-3 text-light'><i className='fa-solid fa-shop'></i>E-Cart</Navbar.Brand>
-
+<Link  to={'/'}>
+    <Navbar.Brand className='fw-bold fs-4 text-light'><i className='fa-solid fa-shop'></i>E-Cart</Navbar.Brand>
+  
+</Link>
  </Col>
 
  <Col  lg={3} md={6}>
@@ -22,8 +23,8 @@ function Footer() {
   </h5>
   <ul>
     <li><Link to={'/'}>Home</Link></li>
-    <li><Link to={'/main'}>Create videos</Link></li>
-    <li><Link to={'/main'}>Playlists</Link></li>
+    <li><Link to={'/wishlist'}>Wishlist</Link></li>
+    <li><Link to={'/cart'}>Cart</Link></li>
   </ul>
  </Col>
  <Col lg={3} md={6}>
@@ -31,9 +32,9 @@ function Footer() {
     Guides
   </h5>
   <ul>
-    <li><Link to={'/main'}>Help</Link></li>
-    <li><Link to={'/main'}>FAQ</Link></li>
-    <li><Link to={'/main'}>Community</Link></li>
+    <li><Link to={'/'}>Help</Link></li>
+    <li><Link to={'/'}>FAQ</Link></li>
+    <li><Link to={'/'}>Community</Link></li>
   </ul>
  </Col>
  <Col lg={3} md={6}>
@@ -42,7 +43,7 @@ function Footer() {
   </h5>
   <form action="">
     <input type="email" name="" id="" placeholder='Your email id' className='form-control'/>
-    <button className='btn btn-secondary mt-2 ms-5'>Send an E-mail</button>
+    <button className='btn btn-outline-light mt-2 ms-5'>Send an E-mail</button>
   </form>
  </Col>
  </Row> 
